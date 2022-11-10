@@ -780,8 +780,7 @@ textarea {
 }
 
 .edu-box-container {
-    margin-bottom: 3rem;
-    padding: 3rem 3rem 3rem 0;
+    padding: 3rem 5rem;
     gap: 10px;
 }
 
@@ -811,6 +810,12 @@ textarea {
 .edu-box-container h3 {
     font-size: 2rem;
     margin-bottom: 2rem;
+}
+
+.education-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
 }
 
 .degree-institution-1,

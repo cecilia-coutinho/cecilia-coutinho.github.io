@@ -1,10 +1,13 @@
 # dynamic-page
 Namn: Cecilia S. R. Coutinho
 
-url published version: 
+# url published version: https://cecilia-coutinho.github.io/dynamic-page/
 
-mitt json var publicerades separat i github och anvandade jag fetch med urlen.
-Repo Json API:
+mitt json publicerades separat i github och jag använde fetch med url.
+
+Repo Json API: https://github.com/Cecilia-Coutinho/my-cv-json-api
+
+JSON URL-en: https://raw.githubusercontent.com/Cecilia-Coutinho/my-cv-json-api/main/cv.json
 
 # Instruktioner
 Denna uppgift bygger vidare på Uppgift 1 och i denna ska du utveckla din CV-sida så den även innehåller JavaScript och blir mer dynamisk. 

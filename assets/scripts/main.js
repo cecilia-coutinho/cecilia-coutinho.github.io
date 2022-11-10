@@ -1,4 +1,4 @@
-//mobile navbar
+//--------> MOBILE NAVBAR <--------
 const mobileMenu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar-menu');
 
@@ -11,7 +11,7 @@ const mobileMenuDisplay = () => {
 mobileMenu.addEventListener('click', mobileMenuDisplay);
 
 
-//carousel slide
+//--------> CAROUSEL SLIDE <--------
 const slideContainer = [...document.querySelectorAll('.portfolio-container')];
 const nextBtn = [...document.querySelectorAll('.next-btn')];
 const preBtn = [...document.querySelectorAll('.pre-btn')];
@@ -31,16 +31,15 @@ slideContainer.forEach((item, i) => {
 });
 
 
-//CV - Json
+//--------> CV - JSON <--------
 
 let url = "https://raw.githubusercontent.com/Cecilia-Coutinho/my-cv-json-api/main/cv.json";
-console.log(`url: ${url}`);
+//console.log(`url: ${url}`);
 
 
 let personalData = document.querySelector('.personal-data-container');
 const userProfile = document.querySelector('.user-profile');
 const profileDescription = document.querySelector('.profile-description');
-//const workData = document.querySelectorAll('.career-exper');
 
 let work = [
     {
@@ -192,30 +191,45 @@ getMyCv();
 
 //get and show name and role
 function addPersonalContent(data) {
-    let myName= document.querySelector('h1');
+    let myName= document.createElement('h1');
     myName.innerText = data.basics.name;
-    //personalData.innerHTML = data.basics.name;
-    //personalData.classList.add('my-name');
     
-
-    let about = document.querySelector('h3');
+    let about = document.createElement('h3');
     about.classList.add('role-description');
     about.innerHTML = `${data.basics.label2 } <br> ${data.basics.label1}`;
 
     personalData.appendChild(myName);
     personalData.appendChild(about);
-
 }
 
 //get and show personal basic data
 function addBasicContent(data) {
-    let userProfileData = document.createElement('li');
+    const userProfileUl = document.createElement('ul');
+
+    const userProfileData1 = document.createElement('li');
+    userProfileData1.innerText = `Email: ${data.basics.email}`;
+
+    const userProfileData2 = document.createElement('li');
+    userProfileData2.innerText = `City: ${data.basics.location.city}, ${data.basics.location.country}`;
+
+    const userProfileData3 = document.createElement('li');
+    userProfileData3.innerText = `Linkedin: ${data.basics.profiles[0].linkedin}`;
+
+    const userProfileData4 = document.createElement('li');
+    userProfileData4.innerText = `Github: ${data.basics.profiles[1].url}`;
     
-    userProfileData.classList.add('basic-data');
+    userProfileData1.classList.add('basic-data');
+    userProfileData2.classList.add('basic-data');
+    userProfileData3.classList.add('basic-data');
+    userProfileData4.classList.add('basic-data');
 
-    userProfileData.innerHTML = `Email: ${data.basics.email}<br> City: ${data.basics.location.city},  ${data.basics.location.country} <br> ${data.basics.profiles[0].linkedin} <br> ${data.basics.profiles[1].url}`;
 
-    userProfile.appendChild(userProfileData);
+    userProfile.appendChild(userProfileUl);
+    userProfileUl.appendChild(userProfileData1);
+    userProfileUl.appendChild(userProfileData2);
+    userProfileUl.appendChild(userProfileData3);
+    userProfileUl.appendChild(userProfileData4);
+
 }
 
 //get and show work data
