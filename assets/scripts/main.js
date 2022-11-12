@@ -10,6 +10,16 @@ const mobileMenuDisplay = () => {
 
 mobileMenu.addEventListener('click', mobileMenuDisplay);
 
+//-------->  LOADING EVENT <--------
+window.addEventListener("load", () => {
+    const loader = document.querySelector('.loader');
+    loader.classList.add('loader-hidden');
+    loader.addEventListener('transitionend', () => {
+        //document.body.parentNode.removeChild('loader');
+        loader.remove();
+    });
+});
+
 
 //--------> CAROUSEL SLIDE <--------
 const slideContainer = [...document.querySelectorAll('.portfolio-container')];
@@ -46,8 +56,6 @@ async function getRepoData() {
 
         titlePortfolio(data);
         descriptionPortfolio(data);
-
-        
 
     } else {
         console.log("HTTP:Error: " + response.status);

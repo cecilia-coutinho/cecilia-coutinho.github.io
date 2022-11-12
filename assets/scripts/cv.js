@@ -126,9 +126,17 @@ const tecSkills = [
     }
 ];
 
-/* const loading = document.querySelectorAll('.loading');
-loading.innerHTML = 'Loading...'; */
+//--------> loading event <--------
+window.addEventListener("load", () => {
+    const loader = document.querySelector('.loader');
+    loader.classList.add('loader-hidden');
+    loader.addEventListener('transitionend', () => {
+        //document.body.parentNode.removeChild('loader');
+        loader.remove();
+    });
+});
 
+//--------> to show CV data <--------
 async function getMyCv() {
 
     let response = await fetch(url);
@@ -136,7 +144,6 @@ async function getMyCv() {
 
     if (response.ok) {
         let data = await response.json();
-        /* loading.innerHTML = ''; */
 
         addPersonalContent(data);
         addBasicContent(data);
@@ -151,13 +158,13 @@ async function getMyCv() {
 
     } else {
         console.log("HTTP:Error: " + response.status);
-    }
-}
+    };
+};
 
 getMyCv();
 
 //get and show name and role
-const personalData = document.getElementById('main'); //parent element:
+const personalData = document.getElementById('main'); //parent element
 
 function addPersonalContent(data) {
     let myName = document.createElement('h1');
