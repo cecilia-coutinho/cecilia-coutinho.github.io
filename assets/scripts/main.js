@@ -30,5 +30,61 @@ slideContainer.forEach((item, i) => {
     })
 });
 
+//--------> PORTFOLIO SECTION <--------
+let url = "https://api.github.com/users/Cecilia-Coutinho/repos";
 
+async function getRepoData() {
 
+    let response = await fetch(url);
+    //console.log(`response: ${response}`);
+
+    if (response.ok) {
+        let data = await response.json();
+        console.log(data)
+        console.log(data[3].name)
+        console.log(data[3].description)
+
+        titlePortfolio(data);
+        descriptionPortfolio(data);
+
+        
+
+    } else {
+        console.log("HTTP:Error: " + response.status);
+    }
+}
+
+getRepoData();
+
+function titlePortfolio(data) {
+
+    let portTitle1 = data[2].name;
+    let newPortTitle1 = portTitle1.replace(/-/g, " ");
+    document.querySelector('.port-card-1-title').innerHTML = newPortTitle1;
+
+    let portTitle2 = data[3].name;
+    let newPortTitle2 = portTitle2.replace(/-/g, " ");
+    document.querySelector('.port-card-2-title').innerHTML = newPortTitle2; 
+
+    let portTitle3 = data[4].name;
+    let newPortTitle3 = portTitle3.replace(/-/g, " ");
+    document.querySelector('.port-card-3-title').innerHTML = newPortTitle3; 
+
+    let portTitle4 = data[5].name;
+    let newPortTitle4 = portTitle4.replace(/-/g, " ");
+    document.querySelector('.port-card-4-title').innerHTML = newPortTitle4; 
+}
+ 
+function descriptionPortfolio(data) {
+    let portDescrip1 = data[2].description;
+    document.querySelector('.port-card-1-description').innerHTML = portDescrip1;
+
+    let portDescrip2 = data[3].description;
+    document.querySelector('.port-card-2-description').innerHTML = portDescrip2;
+
+    let portDescrip3 = data[4].description;
+    document.querySelector('.port-card-3-description').innerHTML = portDescrip3;
+
+    let portDescrip4 = data[5].description;
+    document.querySelector('.port-card-4-description').innerHTML = portDescrip4;
+}

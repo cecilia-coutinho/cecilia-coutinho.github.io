@@ -188,6 +188,16 @@ function addBasicContent(data) {
 
     const userProfileData4 = document.createElement('li');
     userProfileData4.innerText = `Github: ${data.basics.profiles[1].url}`;
+    userProfileData4.style.marginBottom = "30px";
+
+    let printButton = document.createElement('a');
+    printButton.classList.add('button');
+    printButton.classList.add('print-button');
+    printButton.innerHTML = 'Download cv';
+    printButton.onclick = function () {
+        //window.print();
+        printButton.href = "./assets/files-download/[CV .NET] Cecília S R Coutinho.pdf"
+    };
 
     userProfileData1.classList.add('basic-data');
     userProfileData2.classList.add('basic-data');
@@ -200,6 +210,7 @@ function addBasicContent(data) {
     userProfileUl.appendChild(userProfileData2);
     userProfileUl.appendChild(userProfileData3);
     userProfileUl.appendChild(userProfileData4);
+    userProfile.appendChild(printButton);
 
 }
 
