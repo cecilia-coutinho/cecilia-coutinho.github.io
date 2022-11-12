@@ -42,7 +42,6 @@ const highlightMenu = () => {
         homeMenu.classList.add('highlight');
 
         aboutMenu.classList.remove('highlight');
-        return;
     }
     
     else if (window.innerWidth > 960 && scrollPosition < 1330) {
@@ -50,19 +49,21 @@ const highlightMenu = () => {
 
         homeMenu.classList.remove('highlight');
         portfolioMenu.classList.remove('highlight');
-        return;
     }
         
     else if (window.innerWidth > 960 && scrollPosition < 1587 || scrollPosition < 1750 || scrollPosition < 2040) {
         portfolioMenu.classList.add('highlight');
 
         aboutMenu.classList.remove('highlight');
-        return;
+    } else {
+        elemMenu.classList.remove('highlight');
+        window.addEventListener('resize', highlightMenu);
     }
         
-    if ((elemMenu && window.innerWidth < 960 && scrollPosition < 355) || elemMenu) {
+/*     if ((elemMenu && window.innerWidth < 960 && scrollPosition > 355) || elemMenu) {
         elemMenu.classList.remove('highlight');
-    }     
+        window.addEventListener('resize', highlightMenu);
+    };     */ 
 };
 
 window.addEventListener('scroll', highlightMenu);
