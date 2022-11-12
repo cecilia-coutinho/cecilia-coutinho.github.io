@@ -203,7 +203,7 @@ function addBasicContent(data) {
     printButton.innerHTML = 'Download cv';
     printButton.onclick = function () {
         //window.print();
-        printButton.href = "./assets/files-download/[CV .NET] Cecília S R Coutinho.pdf"
+        printButton.href = "./assets/files-download/CV-Cecília-Coutinho.pdf"
     };
 
     userProfileData1.classList.add('basic-data');

@@ -11,22 +11,6 @@ const mobileMenuDisplay = () => {
 
 mobileMenu.addEventListener('click', mobileMenuDisplay);
 
-//------>  CLOSE MOBILE MENU   <------
-//close mobile menu when click
-//TO REVIEW, NOT working
-
-const hideMobileMenu = () => {
-    const menuBars = document.querySelector('.is.active');
-
-    if (menuBars) {
-        mobileMenu.classList.toggle('is-active');
-        menuLinks.classList.remove('active');
-    }
-};
-
-menuLinks.addEventListener('click', hideMobileMenu);
-navLogo.addEventListener('click', hideMobileMenu);
-
 //------>  ACTIVE DESKTOP MENU   <------
 const highlightMenu = () => {
     const elemMenu = document.querySelector('.highlight');
@@ -35,7 +19,7 @@ const highlightMenu = () => {
     const careerMenu = document.querySelector('#career-page');
     const portfolioMenu = document.querySelector('#portfolio-page');
     let scrollPosition = window.scrollY;
-    //console.log(scrollPosition);
+    console.log(scrollPosition);
 
     //add highlight class
     if (window.innerWidth > 960 && scrollPosition < 355) {
@@ -53,17 +37,17 @@ const highlightMenu = () => {
         return;
     }
 
-    else if (window.innerWidth > 960 && scrollPosition < 1587) {
+    else if (window.innerWidth > 960 && scrollPosition < 2000) {
         portfolioMenu.classList.add('highlight');
 
         aboutMenu.classList.remove('highlight');
         return;
-    } 
+    }
 
     if ((elemMenu && window.innerWidth < 960 && scrollPosition > 355) || elemMenu) {
-            elemMenu.classList.remove('highlight');
-            window.addEventListener('resize', highlightMenu);
-        };    
+        elemMenu.classList.remove('highlight');
+        window.addEventListener('resize', highlightMenu);
+    };
 };
 
 window.addEventListener('scroll', highlightMenu);
