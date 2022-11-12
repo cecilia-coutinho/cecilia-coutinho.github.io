@@ -1,6 +1,7 @@
 //--------> MOBILE NAVBAR <--------
 const mobileMenu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar-menu');
+const navLogo = document.querySelector('#navbar-logo');
 
 //mobile navbar: Display Mobile Menu
 const mobileMenuDisplay = () => {
@@ -9,6 +10,48 @@ const mobileMenuDisplay = () => {
 };
 
 mobileMenu.addEventListener('click', mobileMenuDisplay);
+
+//------>  ACTIVE DESKTOP MENU   <------
+const highlightMenu = () => {
+    const elemMenu = document.querySelector('.highlight');
+    const homeMenu = document.querySelector('#home-page');
+    const aboutMenu = document.querySelector('#about-page');
+    const careerMenu = document.querySelector('#career-page');
+    const portfolioMenu = document.querySelector('#portfolio-page');
+    let scrollPosition = window.scrollY;
+    console.log(scrollPosition);
+
+    //add highlight class
+    if (window.innerWidth > 960 && scrollPosition < 355) {
+        homeMenu.classList.add('highlight');
+
+        aboutMenu.classList.remove('highlight');
+        return;
+    }
+    
+    else if (window.innerWidth > 960 && scrollPosition < 1330) {
+        aboutMenu.classList.add('highlight');
+
+        homeMenu.classList.remove('highlight');
+        portfolioMenu.classList.remove('highlight');
+        return;
+    }
+        
+    else if (window.innerWidth > 960 && scrollPosition < 1587 || scrollPosition < 1750 || scrollPosition < 2040) {
+        portfolioMenu.classList.add('highlight');
+
+        aboutMenu.classList.remove('highlight');
+        return;
+    }
+        
+    if ((elemMenu && window.innerWidth < 960 && scrollPosition < 355) || elemMenu) {
+        elemMenu.classList.remove('highlight');
+    }     
+};
+
+window.addEventListener('scroll', highlightMenu);
+window.addEventListener('click', highlightMenu);
+
 
 //-------->  LOADING EVENT <--------
 window.addEventListener("load", () => {
