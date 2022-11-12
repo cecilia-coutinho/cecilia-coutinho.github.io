@@ -35,35 +35,35 @@ const highlightMenu = () => {
     const careerMenu = document.querySelector('#career-page');
     const portfolioMenu = document.querySelector('#portfolio-page');
     let scrollPosition = window.scrollY;
-    console.log(scrollPosition);
+    //console.log(scrollPosition);
 
     //add highlight class
     if (window.innerWidth > 960 && scrollPosition < 355) {
         homeMenu.classList.add('highlight');
 
         aboutMenu.classList.remove('highlight');
+        return;
     }
-    
+
     else if (window.innerWidth > 960 && scrollPosition < 1330) {
         aboutMenu.classList.add('highlight');
 
         homeMenu.classList.remove('highlight');
         portfolioMenu.classList.remove('highlight');
+        return;
     }
-        
-    else if (window.innerWidth > 960 && scrollPosition < 1587 || scrollPosition < 1750 || scrollPosition < 2040) {
+
+    else if (window.innerWidth > 960 && scrollPosition < 1587) {
         portfolioMenu.classList.add('highlight');
 
         aboutMenu.classList.remove('highlight');
-    } else {
-        elemMenu.classList.remove('highlight');
-        window.addEventListener('resize', highlightMenu);
-    }
-        
-/*     if ((elemMenu && window.innerWidth < 960 && scrollPosition > 355) || elemMenu) {
-        elemMenu.classList.remove('highlight');
-        window.addEventListener('resize', highlightMenu);
-    };     */ 
+        return;
+    } 
+
+    if ((elemMenu && window.innerWidth < 960 && scrollPosition > 355) || elemMenu) {
+            elemMenu.classList.remove('highlight');
+            window.addEventListener('resize', highlightMenu);
+        };    
 };
 
 window.addEventListener('scroll', highlightMenu);
@@ -132,17 +132,17 @@ function titlePortfolio(data) {
 
     let portTitle2 = data[3].name;
     let newPortTitle2 = portTitle2.replace(/-/g, " ");
-    document.querySelector('.port-card-2-title').innerHTML = newPortTitle2; 
+    document.querySelector('.port-card-2-title').innerHTML = newPortTitle2;
 
     let portTitle3 = data[4].name;
     let newPortTitle3 = portTitle3.replace(/-/g, " ");
-    document.querySelector('.port-card-3-title').innerHTML = newPortTitle3; 
+    document.querySelector('.port-card-3-title').innerHTML = newPortTitle3;
 
     let portTitle4 = data[5].name;
     let newPortTitle4 = portTitle4.replace(/-/g, " ");
-    document.querySelector('.port-card-4-title').innerHTML = newPortTitle4; 
+    document.querySelector('.port-card-4-title').innerHTML = newPortTitle4;
 }
- 
+
 function descriptionPortfolio(data) {
     let portDescrip1 = data[2].description;
     document.querySelector('.port-card-1-description').innerHTML = portDescrip1;
