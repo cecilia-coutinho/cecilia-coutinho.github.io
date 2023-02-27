@@ -1,7 +1,7 @@
 # dynamic-page
 Namn: Cecilia S. R. Coutinho
 
-# url published version: https://cecilia-coutinho.github.io/dynamic-page/
+#### url published version: https://cecilia-coutinho.github.io/
 
 mitt json med cv-data publicerades separat i github och jag använde fetch med url.
 
