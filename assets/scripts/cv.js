@@ -37,6 +37,7 @@ const degree = [
     }
 ];
 
+
 const courses = [
     {
         course: document.querySelector('.course-1')
@@ -49,80 +50,6 @@ const courses = [
     },
     {
         course: document.querySelector('.course-4')
-    },
-    {
-        course: document.querySelector('.course-5')
-    }
-];
-
-const coreSkills = [
-    {
-        coreName: document.querySelector('.core-skill-1')
-    },
-    {
-        coreName: document.querySelector('.core-skill-2')
-    },
-    {
-        coreName: document.querySelector('.core-skill-3')
-    },
-    {
-        coreName: document.querySelector('.core-skill-4')
-    },
-    {
-        coreName: document.querySelector('.core-skill-5')
-    },
-    {
-        coreName: document.querySelector('.core-skill-6')
-    },
-    {
-        coreName: document.querySelector('.core-skill-7')
-    },
-    {
-        coreName: document.querySelector('.core-skill-8')
-    },
-    {
-        coreName: document.querySelector('.core-skill-9')
-    }
-]
-const tecSkills = [
-    {
-        tecName: document.querySelector('.tec-skill-1')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-2')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-3')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-4')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-5')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-6')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-7')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-8')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-9')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-10')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-11')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-12')
-    },
-    {
-        tecName: document.querySelector('.tec-skill-13')
     }
 ];
 
@@ -152,10 +79,6 @@ async function getMyCv() {
         addCoursesData(data);
         addCoreSkills(data);
         addTecSkills(data);
-
-        profileDescription.innerText = data.basics.about;
-
-
     } else {
         console.log("HTTP:Error: " + response.status);
     };
@@ -206,6 +129,8 @@ function addBasicContent(data) {
         printButton.href = "./assets/files-download/CV-Cecília-Coutinho.pdf"
     };
 
+    profileDescription.innerText = `${data.basics.about}`;
+
     userProfileData1.classList.add('basic-data');
     userProfileData2.classList.add('basic-data');
     userProfileData3.classList.add('basic-data');
@@ -244,27 +169,34 @@ function addDegreeData(data) {
 
 //get and show courses data
 function addCoursesData(data) {
-
-    for (let i = 0; i < courses.length; i++) {
-        courses[i].course.innerHTML = `${data.courses[i].name},  ${data.courses[i].institution}`;
-    }
-
+        for (let i = 0; i < courses.length; i++) {
+            courses[i].course.innerText = `${data.courses[i].name},  ${data.courses[i].institution}`;
+        }
 }
 
 
 //get and show core skills data
 function addCoreSkills(data) {
+    const coreList = document.getElementsByClassName('core')[0];
+    const coreSkills = data.coreSkills;
 
-    for (let i = 0; i < coreSkills.length; i++) {
-        coreSkills[i].coreName.innerHTML = data.coreSkills[i].name;
+    for (let i = 0; i < coreSkills.length && i < 5; i++) {
+        const listItem = document.createElement('li');
+        listItem.textContent = coreSkills[i].name;
+        coreList.appendChild(listItem);
     }
-
+    console.log(coreList);
 }
 
 //get and show tec skills data
 function addTecSkills(data) {
+    const techskillsList = document.getElementsByClassName('tech')[0];
+    const techSkills = data.technicalSkills;
 
-    for (let i = 0; i < tecSkills.length; i++) {
-        tecSkills[i].tecName.innerHTML = data.technicalSkills[i].name;
+    for (let i = 0; i < techSkills.length; i++) {
+        const listItem = document.createElement('li');
+        listItem.textContent = techSkills[i].name;
+        techskillsList.appendChild(listItem);
     }
+    console.log(techskillsList);
 }
