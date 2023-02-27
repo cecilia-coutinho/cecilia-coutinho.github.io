@@ -1019,7 +1019,7 @@ textarea {
 }
 
 .user-profile li {
-    line-height: 5rem;
+    line-height: 2.5rem;
 }
 
 .skill-title {
@@ -1047,7 +1047,7 @@ textarea {
     background-size: 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    line-height: 4rem;
+    /*line-height: 4rem;*/
     margin-top: 20px;
     font-size: 1.6rem;
 }
