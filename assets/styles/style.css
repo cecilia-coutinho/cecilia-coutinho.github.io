@@ -126,35 +126,6 @@ body {
     border-bottom: 4px solid var(--color-hover-1);
 }
 
-/* 
-.navbar-item.underline-effect{
-    display: inline-block;
-    position: relative;
-}
-
-.navbar-item.underline-effect::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 25px;
-    width: 0;
-    height: 2px;
-    color: var(--color-hover-1);
-    background-color: var(--color-hover-1);
-} */
-
-/* .navbar-item.underline-effect:hover:before, */
-/* .highlight::hover:before {
-    width: 80%;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-} */
-
-/* .navbar-item {
-    height: 100px;
-} */
-
 .navbar-links {
     color: var(--color-main-1);
     display: flex;
@@ -318,6 +289,7 @@ body {
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
+    line-height: 40px;
 }
 
 .main-content b {
@@ -1103,7 +1075,6 @@ textarea {
         background-color: var(--color-hover-1);
     }
 
-
     .logo {
         padding-left: 25px;
     }
@@ -1183,9 +1154,18 @@ textarea {
     /* hero section ----> */
     .hero-description {
         padding: 0;
+        font-size: 1.4rem;
+    }
+
+    .hero-description b {
+        font-size: 1.4rem;
     }
 
     /* about section ----> */
+
+    .main {
+        padding-bottom: 0;
+    }
     .main-content {
         margin: auto 0;
         text-align: center;
@@ -1240,6 +1220,18 @@ textarea {
     /* portfolio page ----> */
     .portfolio-card {
         max-width: 16rem;
+    }
+
+    .portfolio h1,
+    .career h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    .portfolio,
+    .career {
+        margin-top: 0;
+        padding-bottom: 30px;
     }
 
     /* contact page ----> */
@@ -1312,12 +1304,13 @@ textarea {
     }
 
     .main-content h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 
     .main-content h2 {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         margin-right: 0;
+        line-height: 35px;
     }
 
     .main-img-container img {
