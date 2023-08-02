@@ -157,7 +157,7 @@ function addBasicContent(data) {
 //get and show work data
 function addWorkData(data) {
     for (let i = 0; i < work.length; i++) {
-        work[i].company.innerHTML = data.work[i].company;
+        work[i].company.innerHTML = `${data.work[i].company}, ${data.work[i].jobLocation}, `;
         work[i].role.innerHTML = `${data.work[i].role} | ${data.work[i].date}`;
         work[i].jobDescription.innerHTML = data.work[i].jobDescription;
     }
@@ -168,10 +168,31 @@ function addWorkData(data) {
 function addDegreeData(data) {
 
     for (let i = 0; i < degree.length; i++) {
-        degree[i].institution.innerHTML = data.education[i].institution;
-        degree[i].area.innerHTML = data.education[i].area;
+        degree[i].area.innerHTML = `${data.education[i].area}, ${data.education[i].institution}`;
     }
 
+}
+
+function addDegreeData(data) {
+    const eduContainer = document.querySelector('.edu-container');
+
+    for (let i = 0; i < data.education.length; i++) {
+        const degree = data.education[i];
+
+        const infoDegree = document.createElement('div');
+        infoDegree.classList.add('info-degree');
+
+        const eduData = document.createElement('ul');
+        eduData.classList.add('edu-data');
+
+        const degreeInfo = document.createElement('li');
+        degreeInfo.classList.add('degree-info');
+        degreeInfo.textContent = `${degree.area}, ${degree.institution} | ${degree.startDate}-${degree.endDate}`;
+
+        eduData.appendChild(degreeInfo);
+        infoDegree.appendChild(eduData);
+        eduContainer.appendChild(infoDegree);
+    }
 }
 
 
