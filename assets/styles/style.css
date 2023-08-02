@@ -454,14 +454,27 @@ body {
     text-align: center;
 }
 
+.portfolio-wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 85%;
+    height: 100%;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
 .portfolio-container {
-    /*padding: 0 10vw;*/
     margin: 0 auto;
     display: flex;
     overflow: hidden;
     scroll-behavior: smooth;
-    max-width: 85%;
-    height: 480px;
+    height: 500px;
+    width: 80%;
+}
+
+.carousel-inner {
+    margin: 0 auto;
+    display: flex;
 }
 
 .portfolio-container::-webkit-scrollbar {
@@ -499,8 +512,6 @@ body {
 
     transition: .3s ease-in;
     line-height: normal;
-
-
 }
 
 .portfolio-img-container {
@@ -596,7 +607,7 @@ body {
     margin-top: 2rem;
     padding: 1rem;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1.2em;
 }
 
 .portfolio-img {
@@ -626,22 +637,18 @@ body {
     align-items: center;
 } */
 
-.carousel {
-    position: relative;
-}
-
 .pre-btn,
 .next-btn {
     border: none;
-    width: 10vw;
-    height: 130%;
+    /*width: 10vw;*/
+    height: 125%;
     position: absolute;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background: transparent;
-    z-index: 9;
+    /*z-index: 9;*/
     cursor: pointer;
 }
 
@@ -1235,13 +1242,26 @@ textarea {
     }
 
     /* portfolio page ----> */
+    .portfolio-container {
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
+        overflow-x: auto;
+    }
+
     .portfolio-card {
-        max-width: 16rem;
+        margin: 0 auto;
+        margin-left: 8px;
+    }
+
+    .pre-btn,
+    .next-btn {
+        display: none;
     }
 
     .portfolio h1,
     .career h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-bottom: 30px;
     }
 
@@ -1353,9 +1373,45 @@ textarea {
     }
 }
 
-@media screen and (max-width: 51rem) {}
+@media screen and (max-width: 18rem) {
+
+    /* portfolio page ----> */   
+        .portfolio-card {
+            max-width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .portfolio-card h2 {
+            width: 200px;
+            font-size: .8em;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+    
+        .portfolio-card p {
+            font-size: .8em;
+            margin: 0 auto;
+            padding: 0 15px;
+            height: 200px;
+        }
+    
+        .portfolio-img-container {
+            margin: 0;
+        }
+    
+        .fa-4x {
+            font-size: 2.5em;
+        }
+    
+        .button-carousel {
+            font-size: 15px;
+        }
+}
 
 @media screen and (max-width: 36rem) {
+    
     .main-charact {
         display: flex;
         flex-direction: column;
