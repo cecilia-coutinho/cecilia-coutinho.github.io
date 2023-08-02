@@ -85,22 +85,41 @@ async function getMyCv() {
 };
 
 getMyCv();
-
+downloadCv();
 //get and show name and role
 const personalData = document.getElementById('main'); //parent element
 
 function addPersonalContent(data) {
     let myName = document.createElement('h1');
     myName.classList.add('my-name');
-    myName.innerHTML = data.basics.name;
+    myName.innerHTML = data.basics.name.toUpperCase();
 
     let about = document.createElement('h3');
     about.classList.add('role-description');
-    about.innerHTML = `${data.basics.label2} <br> ${data.basics.label1}`;
+    about.innerHTML = `${data.basics.label2} <br> ${data.basics.label1}`.toUpperCase();
 
     personalData.appendChild(myName);
     personalData.appendChild(about);
-    console.log(myName);
+    //console.log(myName);
+}
+
+//button download cv
+function downloadCv() {
+    let printButton = document.createElement('a');
+    printButton.classList.add('cv-btn');
+    printButton.classList.add('print-button');
+    printButton.innerHTML = 'Download cv';
+    printButton.onclick = function () {
+        //window.print();
+        printButton.href = "./assets/files-download/[CV .NETDev] Cecilia_Coutinho.pdf";
+    };
+
+    // Create a separate container for the button
+    const buttonContainer = document.createElement('div');
+    buttonContainer.appendChild(printButton);
+
+    const btnCv = document.querySelector('.btn-cv');
+    btnCv.appendChild(buttonContainer);
 }
 
 //get and show personal basic data
@@ -120,15 +139,6 @@ function addBasicContent(data) {
     userProfileData4.innerText = `Github: ${data.basics.profiles[1].url}`;
     userProfileData4.style.marginBottom = "30px";
 
-    let printButton = document.createElement('a');
-    printButton.classList.add('button');
-    printButton.classList.add('print-button');
-    printButton.innerHTML = 'Download cv';
-    printButton.onclick = function () {
-        //window.print();
-        printButton.href = "./assets/files-download/CV-Cecília-Coutinho.pdf"
-    };
-
     profileDescription.innerText = `${data.basics.about}`;
 
     userProfileData1.classList.add('basic-data');
@@ -138,12 +148,10 @@ function addBasicContent(data) {
 
 
     userProfile.appendChild(userProfileUl);
-    userProfileUl.appendChild(userProfileData1);
+    /*userProfileUl.appendChild(userProfileData1);
     userProfileUl.appendChild(userProfileData2);
     userProfileUl.appendChild(userProfileData3);
-    userProfileUl.appendChild(userProfileData4);
-    userProfile.appendChild(printButton);
-
+    userProfileUl.appendChild(userProfileData4);*/
 }
 
 //get and show work data
@@ -169,9 +177,9 @@ function addDegreeData(data) {
 
 //get and show courses data
 function addCoursesData(data) {
-        for (let i = 0; i < courses.length; i++) {
-            courses[i].course.innerText = `${data.courses[i].name},  ${data.courses[i].institution}`;
-        }
+    for (let i = 0; i < courses.length; i++) {
+        courses[i].course.innerText = `${data.courses[i].name},  ${data.courses[i].institution}`;
+    }
 }
 
 
