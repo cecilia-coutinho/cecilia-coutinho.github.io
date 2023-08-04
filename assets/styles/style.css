@@ -652,71 +652,6 @@ body {
     right: 0;
 }
 
-/* career section ----> */
-
-.career {
-    /*padding-top: 4rem;*/
-    width: 100%;
-}
-
-.career-company {
-    display: flex;
-    gap: 15px;
-    line-height: 25px;
-}
-
-.career-img {
-    width: 50px;
-}
-
-.exper-p {
-    margin-top: 5px;
-    font-size: 16px;
-    padding: 0 2rem;
-}
-
-.job-location {
-    font-weight: 400;
-}
-
-/* 
-.career-content {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-.career-content-exper {
-    display: flex;
-    flex-direction: column;
-    padding-right: 2rem;
-    font-size: 1rem;
-}
-
-
-
-.exper-sub,
-.exper-p {
-    margin-bottom: 2rem;
-}
-
-/* .exper-p {
-    padding-right: 5rem ;
-} */
-
-
-/*
-.career-exper {
-    border: 2px solid var(--color-main-6);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 2rem auto;
-    border-radius: 10px;
-    padding: 3rem 2rem 1rem 2rem;
-    max-width: 60%;
-} */
-
 .download-bt {
     width: 90%;
     margin: 0 auto;
@@ -1036,10 +971,36 @@ textarea {
     display: block;
     max-width: 100%;
     height: auto;
+    width: 50px;
 }
 
 .career-content-exper {
     flex: 1;
+}
+
+.profile-description {
+    margin-top: 20px;
+}
+
+.career {
+    /*padding-top: 4rem;*/
+    width: 100%;
+}
+
+.career-company {
+    display: flex;
+    gap: 15px;
+    line-height: 25px;
+}
+
+.exper-p {
+    margin-top: 5px;
+    font-size: 16px;
+    padding: 0 2rem;
+}
+
+.job-location {
+    font-weight: 400;
 }
 
 /* Styles for Education */
@@ -1056,6 +1017,37 @@ textarea {
 .info-degree h3,
 .info-courses h3 {
     margin-bottom: 5px;
+}
+
+/* CV Page ----> */
+
+.profile-description {
+    margin-top: 20px;
+
+}
+.career {
+    /*padding-top: 4rem;*/
+    width: 100%;
+}
+
+.career-company {
+    display: flex;
+    gap: 15px;
+    line-height: 25px;
+}
+
+.career-img {
+    width: 50px;
+}
+
+.exper-p {
+    margin-top: 5px;
+    font-size: 16px;
+    padding: 0 2rem;
+}
+
+.job-location {
+    font-weight: 400;
 }
 
 /*.edu-box-container,
