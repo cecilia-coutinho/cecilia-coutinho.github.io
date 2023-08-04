@@ -931,7 +931,8 @@ textarea {
 .profile-container h3,
 .work-container h3,
 .edu-container h3,
-.courses-container h3 {
+.courses-container h3,
+.info-courses h3 {
     border-bottom: 3px solid;
 }
 
@@ -1004,8 +1005,7 @@ textarea {
 }
 
 /* Styles for Education */
-.info-degree,
-.info-courses {
+.info-degree{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1019,6 +1019,13 @@ textarea {
 
 .edu-data {
     list-style: none;
+    font-size: 16px;
+}
+
+.courses-data {
+    margin-top: 20px;
+    padding: 0 2rem;
+    font-size: 16px;
 }
 
 .edu-container h3 {
@@ -1038,10 +1045,6 @@ textarea {
     gap: 10px;
     line-height: 2rem;
     margin-bottom: 10px;
-}
-
-.info-courses {
-    margin-left: 2rem;
 }
 
 /*.edu-box-container,
