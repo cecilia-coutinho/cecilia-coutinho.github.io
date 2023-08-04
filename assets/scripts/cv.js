@@ -156,13 +156,27 @@ function addBasicContent(data) {
 
 //get and show work data
 function addWorkData(data) {
-    for (let i = 0; i < work.length; i++) {
-        work[i].company.innerHTML = `${data.work[i].company}, ${data.work[i].jobLocation}, `;
-        work[i].role.innerHTML = `${data.work[i].role} | ${data.work[i].date}`;
-        work[i].jobDescription.innerHTML = data.work[i].jobDescription;
+    const workContainers = document.querySelectorAll('.career-exper');
+
+    for (let i = 0; i < workContainers.length; i++) {
+        const workContainer = workContainers[i];
+        const careerContent = workContainer.querySelector('.career-content-exper');
+        const jobDescriptionList = document.createElement('ul');
+        jobDescriptionList.classList.add('exper-p', 'descrip-' + (i + 1));
+
+        careerContent.querySelector('.company-name').innerText = `${data.work[i].company}, `;
+        careerContent.querySelector('.job-location').innerText = `${data.work[i].jobLocation}`;
+        careerContent.querySelector('.role-' + (i + 1)).innerText = `${data.work[i].role} | ${data.work[i].date}`;
+
+        data.work[i].jobDescription.forEach(description => {
+            const listItem = document.createElement('li');
+            listItem.innerText = description;
+            jobDescriptionList.appendChild(listItem);
+        });
+
+        careerContent.appendChild(jobDescriptionList);
     }
 }
-
 
 //get and show degree data
 function addDegreeData(data) {

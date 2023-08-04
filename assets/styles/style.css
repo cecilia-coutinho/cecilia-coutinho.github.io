@@ -629,15 +629,6 @@ body {
     opacity: 1;
 }
 
-/* .portfolio-btn {
-    display: flex;
-    justify-content: center;
-    margin: 1.5rem 0;
-    height: 50px;
-    width: 200px;
-    align-items: center;
-} */
-
 .pre-btn,
 .next-btn {
     border: none;
@@ -668,6 +659,26 @@ body {
     width: 100%;
 }
 
+.career-company {
+    display: flex;
+    gap: 15px;
+    line-height: 25px;
+}
+
+.career-img {
+    width: 50px;
+}
+
+.exper-p {
+    margin-top: 5px;
+    font-size: 16px;
+    padding: 0 2rem;
+}
+
+.job-location {
+    font-weight: 400;
+}
+
 /* 
 .career-content {
     padding: 0;
@@ -682,9 +693,7 @@ body {
     font-size: 1rem;
 }
 
-.career-img-container {
-    margin: 0 3rem;
-}
+
 
 .exper-sub,
 .exper-p {
@@ -695,10 +704,8 @@ body {
     padding-right: 5rem ;
 } */
 
-/*.career-img {
-    width: 100px;
-}
 
+/*
 .career-exper {
     border: 2px solid var(--color-main-6);
     display: flex;
