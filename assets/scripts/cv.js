@@ -179,19 +179,21 @@ function addWorkData(data) {
 }
 
 //get and show degree data
-function addDegreeData(data) {
+const InstLogo = [
+    { image: 'assets/images/icons-logo/chasacademy-logo.png' },
+    { image: 'assets/images/icons-logo/jensen-logo.png' },
+    { image: 'assets/images/icons-logo/jensen-logo.png' },
+    { image: 'assets/images/icons-logo/jensen-logo.png' },
+    { image: 'assets/images/icons-logo/facceba-logo.jpg' }
+];
 
-    for (let i = 0; i < degree.length; i++) {
-        degree[i].area.innerHTML = `${data.education[i].area}, ${data.education[i].institution}`;
-    }
-
-}
 
 function addDegreeData(data) {
     const eduContainer = document.querySelector('.edu-container');
 
     for (let i = 0; i < data.education.length; i++) {
         const degree = data.education[i];
+        const logo = InstLogo[i];
 
         const infoDegree = document.createElement('div');
         infoDegree.classList.add('info-degree');
@@ -201,7 +203,13 @@ function addDegreeData(data) {
 
         const degreeInfo = document.createElement('li');
         degreeInfo.classList.add('degree-info');
-        degreeInfo.textContent = `${degree.area}, ${degree.institution} | ${degree.startDate}-${degree.endDate}`;
+
+        const imageElement = document.createElement('img');
+        imageElement.src = logo.image;
+        imageElement.classList.add('logo-image');
+
+        degreeInfo.appendChild(imageElement);
+        degreeInfo.appendChild(document.createTextNode(`${degree.area}, ${degree.institution} | ${degree.startDate}-${degree.endDate}`));
 
         eduData.appendChild(degreeInfo);
         infoDegree.appendChild(eduData);
