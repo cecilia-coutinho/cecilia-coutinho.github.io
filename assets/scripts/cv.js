@@ -209,7 +209,7 @@ function addDegreeData(data) {
         imageElement.classList.add('logo-image');
 
         degreeInfo.appendChild(imageElement);
-        degreeInfo.appendChild(document.createTextNode(`${degree.area}, ${degree.institution} | end of ${degree.endDate}`));
+        degreeInfo.appendChild(document.createTextNode(`${degree.area}, ${degree.institution} | end in ${degree.endDate}`));
 
         eduData.appendChild(degreeInfo);
         infoDegree.appendChild(eduData);
